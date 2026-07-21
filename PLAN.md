@@ -1,16 +1,11 @@
 System Font (SF Pro) will be what i pick to use for fonts 
 and will describe actual size later but for now will use the labels as we create and make a list below this 
+
 .largeTitle: The largest title style, intended for prominent headers.
-.title: A large title style.
 .title2: A medium title style.
-.title3: A smaller title style.
-.headline: A style used for headers that should stand out (often used in lists or bolded text).
-.subheadline: A slightly smaller version of the headline style.
 .body: The default style for standard text content.
 .callout: Used for text that needs to draw attention, like labels or secondary info.
-.footnote: A small style for fine print or secondary notes.
-.caption: A very small style for brief annotations.
-.caption2: Even smaller than the standard caption, often for minimal metadata. 
+
 
 Colors: I think a solid color picked at random for the pass background and a lighter vareint of the color for accsent font colors background of the pass is solid white or black depending on the mode , also if dark mode the saturation woul need to be increased 
 
@@ -20,19 +15,19 @@ Width of the pass with leaving a fixed witdh from both sides of iPhone that will
  
 Asummer below is the ticket 
 
-Flight Name										Flight Number		| Flight name font .headline (accent color font),Flight number font .headling (White color font)
+Flight Name										Flight Number		| Flight name font .title2 (accent color font),Flight number font .title2 (White color font)
 												Flight Date 		| Flight date will be font .callout (accent color font)
 																	|
 																	|
 //Flight Orgin 									//Flight destination| Not in the actual pass 
 Airpot name 						 			Airport name		| Airport names be in font .title2 (accent color font)
 Airport Code	 		Airplane icon			Airport Code		| Airport codes be in font .largetitle  (White color font)
-Time to depart 									Time to land 		| Local timmings and in font .title3 (accent color font)
+Time to depart 									Time to land 		| Local timmings and in font .callout (accent color font)
 ) - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - (	| This better shows the tearbale part 
-Passenger name 														| Name be in font .title (White color font)
+Passenger name 														| Name be in font .title2 (White color font)
 																	|
 	Gate 			Boards	 		Group			Seat			| These are the lables not the actual value this font .callout (accent color fonts)
-	Gate 			Boards	 		Group			Seat			| These are the values this font .subheadline (White color font)
+	Gate 			Boards	 		Group			Seat			| These are the values this font .title2 (White color font)
 																	| 
 																	|
 																	|	 

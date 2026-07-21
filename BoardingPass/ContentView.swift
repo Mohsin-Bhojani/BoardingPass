@@ -39,7 +39,7 @@ struct ContentView: View {
 				}
 				HStack {
 					Spacer()
-						Text("Flight Date").font(.callout)
+					Text("Flight Date").font(.callout)
 				}
 				HStack {
 					Text("Sharjah Airport").font(.title2)
@@ -76,8 +76,8 @@ struct ContentView: View {
 					Spacer()
 					Image(systemName: "photo.fill") //For QR code
 				}
-			}
-		}.padding()
+			}.background(Color.blue).padding(10)
+		}
 	}
 }
 
