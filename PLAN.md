@@ -51,7 +51,8 @@ Screen
    ├─ HStack			← This is for Airport code | Airplance icon | Airport code
    ├─ HStack			← This is for Flight times
    | // The tearable line goes here
-   ├─ HStack			← This is for Passenger name   	
+   ├─ HStack			   	
+   │  ├─ Text		← This is for Passenger name   
    ├─ HStack			
    │  ├─ VStack 		← This is Gate and Gate No. as the as stacked vertically
    │  ├─ VStack 		← This is Boards and Boarding time as the as stacked vertically      
