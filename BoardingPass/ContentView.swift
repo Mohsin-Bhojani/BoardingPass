@@ -6,16 +6,31 @@
 //
 
 import SwiftUI
-import SwiftData
+
+enum Details : String , CaseIterable , Identifiable {
+	
+	case gate 	= "GATE"
+	case boards	= "BOARDS"
+	case group 	= "GROUP"
+	case seat 	= "SEAT"
+	
+	var id: String {rawValue}
+	
+	var Value : String {
+		switch self {
+		case .gate		: "15F"
+		case .boards	: "08:45"
+		case .group		: "A6"
+		case .seat		: "7F"
+		}
+	}
+}
 
 struct ContentView: View {
-	@Environment(\.modelContext) private var modelContext
-	@Query private var items: [Item]
 	
 	var body: some View {
 		ScrollView {
 			VStack {
-				Spacer()
 				HStack {
 					VStack (alignment: .leading){
 						Text("Flight Name").font(.headline)
@@ -27,51 +42,45 @@ struct ContentView: View {
 				}
 				HStack {
 					Spacer()
-					VStack (alignment: .trailing){
-						
+					VStack {
 						Text("Flight Date").font(.callout)
 					}
 				}
-				Spacer()
 				HStack {
-					VStack (alignment: .leading){
+					VStack {
 						Text("Sharjah Airport").font(.title2)
 					}
 					Spacer()
-					VStack (alignment: .trailing){
+					VStack {
 						Text("Dubai Airport ").font(.title2)
 					}
 				}
-				Spacer()
 				HStack {
-					VStack (alignment: .leading){
+					VStack {
 						Text("SHJ").font(.largeTitle)
 					}
 					Spacer()
 					Image(systemName: "airplane")  .font(.title)
 					Spacer()
-					VStack (alignment: .trailing){
+					VStack {
 						Text("DXB").font(.largeTitle)
 					}
 				}
-				Spacer()
 				HStack {
-					VStack (alignment: .leading){
+					VStack{
 						Text("10:00").font(.title3)
 					}
 					Spacer()
-					VStack (alignment: .trailing){
+					VStack{
 						Text("14:00").font(.title3)
 					}
 				}
-				Spacer()
 				HStack {
-					VStack (alignment: .leading){
+					VStack {
 						Text("Name Of The Passger ").font(.title3)
 					}
 					Spacer()
 				}
-				Spacer()
 				HStack {
 					VStack {
 						Text("Gate").font(.callout)
@@ -79,7 +88,7 @@ struct ContentView: View {
 					}
 					Spacer()
 					VStack {
-						Text("Boards").font(.callout)
+						Text("BOARDS").font(.callout)
 						Text("08:45").font(.subheadline)
 					}
 					Spacer()
@@ -93,7 +102,15 @@ struct ContentView: View {
 						Text("7F").font(.subheadline)
 					}
 				}
-				Spacer()
+				HStack {
+					ForEach(Details) { detail in
+						VStack {
+							Text(detail.rawValue).font(.subheadline)
+							Text(detail.value).font(.callout)
+						}
+					}
+				}
+				
 				VStack {
 					Spacer()
 					Image(systemName: "photo.fill") //For QR code
@@ -106,5 +123,4 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
 }
