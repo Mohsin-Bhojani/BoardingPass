@@ -26,76 +26,55 @@ enum Details : String , CaseIterable , Identifiable {
 	}
 }
 
+let Fonts = ["largeTitle", "title2" , "callout" ]
 struct ContentView: View {
 	
 	var body: some View {
 		ScrollView {
 			VStack {
 				HStack {
-					VStack (alignment: .leading){
-						Text("Flight Name").font(.headline)
-					}
+					Text("Flight Name").font(.title2)
 					Spacer()
-					VStack (alignment: .trailing){
-						Text("Flight Number").font(.headline)
-					}
+					Text("Flight Number").font(.title2)
 				}
 				HStack {
 					Spacer()
-					VStack {
 						Text("Flight Date").font(.callout)
-					}
 				}
 				HStack {
-					VStack {
-						Text("Sharjah Airport").font(.title2)
-					}
+					Text("Sharjah Airport").font(.title2)
 					Spacer()
-					VStack {
-						Text("Dubai Airport ").font(.title2)
-					}
+					Text("Dubai Airport ").font(.title2)
 				}
 				HStack {
-					VStack {
-						Text("SHJ").font(.largeTitle)
-					}
+					Text("SHJ").font(.largeTitle)
 					Spacer()
-					Image(systemName: "airplane")  .font(.title)
+					Image(systemName: "airplane")  .font(.largeTitle)
 					Spacer()
-					VStack {
-						Text("DXB").font(.largeTitle)
-					}
+					Text("DXB").font(.largeTitle)
 				}
 				HStack {
-					VStack{
-						Text("10:00").font(.title3)
-					}
+					Text("10:00").font(.callout)
 					Spacer()
-					VStack{
-						Text("14:00").font(.title3)
-					}
+					Text("14:00").font(.callout)
 				}
 				HStack {
-					VStack {
-						Text("Name Of The Passger ").font(.title3)
-					}
+					Text("Name Of The Passger ").font(.title2)
 					Spacer()
 				}
 				HStack {
+					Spacer()
 					ForEach(Details.allCases) { detail in
-						Spacer()
 						VStack {
-							Text(detail.rawValue).font(.subheadline)
-							Text(detail.Value).font(.callout)
+							Text(detail.rawValue).font(.callout)
+							Text(detail.Value).font(.title2)
 						}
 						Spacer()
 					}
 				}
-				
 				VStack {
 					Spacer()
 					Image(systemName: "photo.fill") //For QR code
-					Spacer()
 				}
 			}
 		}.padding()
