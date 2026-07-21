@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		CE1A61D9300F4F3600C9E2D2 /* PLAN.md in Resources */ = {isa = PBXBuildFile; fileRef = CE1A61D8300F4F3100C9E2D2 /* PLAN.md */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		CE1A61BB300F4F1B00C9E2D2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,6 +31,7 @@
 		CE1A61A9300F4F1800C9E2D2 /* BoardingPass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoardingPass.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE1A61BA300F4F1B00C9E2D2 /* BoardingPassTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BoardingPassTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE1A61C4300F4F1B00C9E2D2 /* BoardingPassUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BoardingPassUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE1A61D8300F4F3100C9E2D2 /* PLAN.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = PLAN.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -88,6 +93,7 @@
 		CE1A61A0300F4F1700C9E2D2 = {
 			isa = PBXGroup;
 			children = (
+				CE1A61D8300F4F3100C9E2D2 /* PLAN.md */,
 				CE1A61AB300F4F1800C9E2D2 /* BoardingPass */,
 				CE1A61BD300F4F1B00C9E2D2 /* BoardingPassTests */,
 				CE1A61C7300F4F1B00C9E2D2 /* BoardingPassUITests */,
@@ -225,6 +231,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE1A61D9300F4F3600C9E2D2 /* PLAN.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
