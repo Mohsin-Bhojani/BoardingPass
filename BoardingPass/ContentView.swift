@@ -82,32 +82,13 @@ struct ContentView: View {
 					Spacer()
 				}
 				HStack {
-					VStack {
-						Text("Gate").font(.callout)
-						Text("15F").font(.subheadline)
-					}
-					Spacer()
-					VStack {
-						Text("BOARDS").font(.callout)
-						Text("08:45").font(.subheadline)
-					}
-					Spacer()
-					VStack {
-						Text("Group").font(.callout)
-						Text("A6").font(.subheadline)
-					}
-					Spacer()
-					VStack {
-						Text("Seat").font(.callout)
-						Text("7F").font(.subheadline)
-					}
-				}
-				HStack {
-					ForEach(Details) { detail in
+					ForEach(Details.allCases) { detail in
+						Spacer()
 						VStack {
 							Text(detail.rawValue).font(.subheadline)
-							Text(detail.value).font(.callout)
+							Text(detail.Value).font(.callout)
 						}
+						Spacer()
 					}
 				}
 				
