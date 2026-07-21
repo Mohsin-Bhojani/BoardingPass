@@ -26,7 +26,15 @@ enum Details : String , CaseIterable , Identifiable {
 	}
 }
 
-let Fonts = ["largeTitle", "title2" , "callout" ]
+struct DashedLine: Shape {
+	func path(in rect: CGRect) -> Path {
+		var p = Path()
+		p.move(to: CGPoint(x: rect.minX, y: rect.midY))
+		p.addLine(to: CGPoint(x: rect.maxX, y: rect.midY))
+		return p
+	}
+}
+
 struct ContentView: View {
 	
 	var body: some View {
@@ -39,7 +47,7 @@ struct ContentView: View {
 				}
 				HStack {
 					Spacer()
-					Text("Flight Date").font(.callout)
+					Text("Flight Date").font(.body)
 				}
 				HStack {
 					Text("Sharjah Airport").font(.title2)
@@ -54,10 +62,23 @@ struct ContentView: View {
 					Text("DXB").font(.largeTitle)
 				}
 				HStack {
-					Text("10:00").font(.callout)
+					Text("10:00").font(.body)
 					Spacer()
-					Text("14:00").font(.callout)
+					Text("14:00").font(.body)
 				}
+				HStack(spacing: 10) {
+					Circle()
+						.fill(Color(.systemBackground))
+						.frame(width: 24, height: 24)
+					DashedLine()
+						.stroke(style: StrokeStyle(lineWidth: 2, dash: [6]))
+						.foregroundStyle(.white.opacity(0.6))
+						.frame(height: 1)
+					Circle()
+						.fill(Color(.systemBackground))
+						.frame(width: 24, height: 24)
+				}
+				.padding(.horizontal, -28)
 				HStack {
 					Text("Name Of The Passger ").font(.title2)
 					Spacer()
@@ -74,9 +95,10 @@ struct ContentView: View {
 				}
 				VStack {
 					Spacer()
-					Image(systemName: "photo.fill") //For QR code
+					Image(systemName: "qrcode")
+						.font(.system(size : 300))
 				}
-			}.background(Color.blue).padding(10)
+			}.padding().background(Color.blue).padding()
 		}
 	}
 }
