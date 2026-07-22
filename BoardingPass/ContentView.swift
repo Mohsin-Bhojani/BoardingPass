@@ -36,6 +36,20 @@ struct DashedLine: Shape {
 }
 
 struct ContentView: View {
+	@Environment(\.colorScheme) private var colorScheme
+	
+	private let cardPadding: 	CGFloat = 16
+	private let notchSize: 		CGFloat = 24
+	
+	private var notchOverhang: CGFloat {
+		-(cardPadding + notchSize / 2)
+	}
+
+	private var cardColor: Color {
+			colorScheme == .light
+				? Color(red: 0.20, green: 0.55, blue: 1.00)
+				: Color(red: 0.10, green: 0.35, blue: 0.75)
+		}
 	
 	var body: some View {
 		ScrollView {
@@ -69,16 +83,16 @@ struct ContentView: View {
 				HStack(spacing: 10) {
 					Circle()
 						.fill(Color(.systemBackground))
-						.frame(width: 24, height: 24)
+						.frame(width: notchSize, height: notchSize)
 					DashedLine()
 						.stroke(style: StrokeStyle(lineWidth: 2, dash: [6]))
 						.foregroundStyle(.white.opacity(0.6))
 						.frame(height: 1)
 					Circle()
 						.fill(Color(.systemBackground))
-						.frame(width: 24, height: 24)
+						.frame(width: notchSize, height: notchSize)
 				}
-				.padding(.horizontal, -28)
+				.padding(.horizontal, notchOverhang)
 				HStack {
 					Text("Name Of The Passger ").font(.title2)
 					Spacer()
@@ -96,9 +110,12 @@ struct ContentView: View {
 				VStack {
 					Spacer()
 					Image(systemName: "qrcode")
-						.font(.system(size : 300))
+						.font(.system(.largeTitle))
 				}
-			}.padding().background(Color.blue).padding()
+			}.padding(cardPadding)
+			.background(cardColor)
+			.clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+			.padding()
 		}
 	}
 }
