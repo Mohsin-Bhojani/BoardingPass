@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import GeoToolbox
 
 enum Details : String , CaseIterable , Identifiable {
 	
@@ -41,6 +42,7 @@ struct ContentView: View {
 	private let cardPadding: 	CGFloat = 16
 	private let notchSize: 		CGFloat = 24
 	
+	
 	private var notchOverhang: CGFloat {
 		-(cardPadding + notchSize / 2)
 	}
@@ -52,7 +54,7 @@ struct ContentView: View {
 		}
 	
 	var body: some View {
-		ScrollView {
+		VStack {
 			VStack {
 				HStack {
 					Text("Flight Name").font(.title2)
@@ -109,8 +111,14 @@ struct ContentView: View {
 				}
 				VStack {
 					Spacer()
-					Image(systemName: "qrcode")
-						.font(.system(.largeTitle))
+					GeometryReader { geo in
+						Image(systemName: "qrcode")
+							.resizable()
+							.scaledToFill()
+							.frame(width: geo.size.width * 0.6, height: geo.size.width * 0.6)
+					}
+					.frame(height: 300)
+					Spacer()
 				}
 			}.padding(cardPadding)
 			.background(cardColor)
