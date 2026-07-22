@@ -15,7 +15,7 @@ Width of the pass with leaving a fixed witdh from both sides of iPhone that will
  
 Asummer below is the ticket 
 
-Flight Name										Flight Number		| Flight name font .title2 (accent color font),Flight number font .title2 (White color font)
+Flight Name										Flight Number		| Flight name font .title2 (accent color font),Flight number font .title2 (accent color font)
 												Flight Date 		| Flight date will be font .callout (accent color font)
 																	|
 																	|

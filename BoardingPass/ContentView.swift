@@ -48,39 +48,45 @@ struct ContentView: View {
 	}
 
 	private var cardColor: Color {
-			colorScheme == .light
-				? Color(red: 0.20, green: 0.55, blue: 1.00)
-				: Color(red: 0.10, green: 0.35, blue: 0.75)
-		}
+		colorScheme == .light
+			? Color(red: 0.20, green: 0.55, blue: 1.00)
+			: Color(red: 0.10, green: 0.35, blue: 0.75)
+	}
+	
+	private var textColor: Color {
+		colorScheme == .light
+		? Color(red: 0.10, green: 0.35, blue: 0.75)
+		: Color(red: 0.20, green: 0.55, blue: 1.00)
+	}
 	
 	var body: some View {
 		VStack {
 			VStack {
 				HStack {
-					Text("Flight Name").font(.title2)
+					Text("Flight Name").font(.title2).foregroundStyle(textColor)
 					Spacer()
-					Text("Flight Number").font(.title2)
+					Text("AJ90067").font(.title2).foregroundStyle(textColor)
 				}
 				HStack {
 					Spacer()
-					Text("Flight Date").font(.body)
+					Text("Flight Date").font(.body).foregroundStyle(textColor)
 				}
 				HStack {
-					Text("Sharjah Airport").font(.title2)
+					Text("Sharjah Airport").font(.title2).foregroundStyle(textColor)
 					Spacer()
-					Text("Dubai Airport ").font(.title2)
+					Text("Dubai Airport ").font(.title2).foregroundStyle(textColor)
 				}
 				HStack {
 					Text("SHJ").font(.largeTitle)
 					Spacer()
-					Image(systemName: "airplane")  .font(.largeTitle)
+					Image(systemName: "airplane").font(.largeTitle)
 					Spacer()
 					Text("DXB").font(.largeTitle)
 				}
 				HStack {
-					Text("10:00").font(.body)
+					Text("10:00").font(.body).foregroundStyle(textColor)
 					Spacer()
-					Text("14:00").font(.body)
+					Text("14:00").font(.body).foregroundStyle(textColor)
 				}
 				HStack(spacing: 10) {
 					Circle()
@@ -103,22 +109,19 @@ struct ContentView: View {
 					Spacer()
 					ForEach(Details.allCases) { detail in
 						VStack {
-							Text(detail.rawValue).font(.callout)
+							Text(detail.rawValue).font(.callout).foregroundStyle(textColor)
 							Text(detail.Value).font(.title2)
 						}
 						Spacer()
 					}
 				}
 				VStack {
-					Spacer()
-					GeometryReader { geo in
-						Image(systemName: "qrcode")
-							.resizable()
-							.scaledToFill()
-							.frame(width: geo.size.width * 0.6, height: geo.size.width * 0.6)
-					}
-					.frame(height: 300)
-					Spacer()
+					Image(systemName: "qrcode")
+						.resizable()
+						.scaledToFit()
+						.containerRelativeFrame(.horizontal) { width, _ in width * 0.6
+						}
+						.padding(.top, 24)
 				}
 			}.padding(cardPadding)
 			.background(cardColor)
